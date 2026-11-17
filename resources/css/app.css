@@ -1,0 +1,42 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] { display: none !important; }
+
+@layer base {
+  body {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #1f2937;
+  }
+}
+
+@layer components {
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-simb-from via-[#6a88c6] to-simb-to px-5 py-2 text-sm font-medium text-white shadow-sm transition duration-200 hover:brightness-110 hover:shadow-md active:scale-95; }
+  .btn-ghost   { @apply inline-flex items-center justify-center gap-2 rounded-full bg-slate-100 px-5 py-2 text-sm font-medium text-slate-600 transition duration-200 hover:bg-slate-200 active:scale-95; }
+  .btn-icon    { @apply inline-flex h-8 w-8 items-center justify-center rounded-lg text-sm transition duration-200 active:scale-90; }
+
+  .card  { @apply rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/60; }
+  .label { @apply mb-1.5 block text-xs font-medium text-slate-500; }
+  .field { @apply w-full rounded-xl border-0 bg-white px-4 py-2.5 text-sm text-slate-800 ring-1 ring-slate-200 transition placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-simb-to; }
+
+  .tbl { @apply w-full text-left text-sm; }
+  .tbl th { @apply bg-slate-50/80 px-5 py-3.5 text-[11px] font-semibold uppercase tracking-wider text-slate-500; }
+  .tbl td { @apply px-5 py-3.5 text-slate-700; }
+  .tbl tbody tr { @apply border-t border-slate-100 transition-colors hover:bg-slate-50/70; }
+
+  .badge         { @apply inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold uppercase; }
+  .badge-in      { @apply badge bg-emerald-50 text-emerald-600; }
+  .badge-out     { @apply badge bg-rose-50 text-rose-600; }
+  .badge-delete  { @apply badge bg-amber-50 text-amber-600; }
+  .badge-neutral { @apply badge bg-slate-100 text-slate-600; }
+  .badge-owner   { @apply badge bg-violet-50 text-violet-600; }
+  .badge-admin   { @apply badge bg-sky-50 text-sky-600; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; }
+}
